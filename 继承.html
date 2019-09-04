@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+kaskd;k;askd; ;aksd;fk askdskakf;askfd;k;akf;k;akd;sk
+
+
+<script type="text/javascript">
+
+class pa{
+	constructor(name,value){
+		this.name=name;
+		this.value=value;
+	}
+	change(){
+		console.log('pa change....')
+	
+	}
+
+}
+
+class st extends pa{
+		constructor(name,value){
+			super(name,value);
+			this.name=name;
+			this.value=value;
+		}
+		
+		change2(){
+		
+			console.log("change2.......")
+			console.log(this.name+this.value+this.len)
+		}
+		change(){
+			super.change();
+			console.log('st change...')
+		}
+
+}
+
+let st1=new st('a',12,'000');
+//st1.change2();
+st1.change();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+kaskd;k;askd; ;aksd;fk askdskakf;askfd;k;akf;k;akd;sk
+
+
+<script type="text/javascript">
+
+console.log(document.cookie); 
+
+let a=(20.02-20).toFixed(2);
+console.log(a);
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://example.com/', true);
+xhr.onreadystatechange=state_Change;
+xhr.withCredentials = true;
+xhr.send(null);
+
+function state_Change()
+{
+if (xhr.readyState==4){// 4 = "loaded"
+  if (xhr.status==200)
+    {// 200 = OK
+    // ...our code here...
+	alert('20000000000000000')
+    }
+  else
+    {
+	alert(xhr.status)
+    alert("Problem retrieving XML data");
+    }
+  }
+}
+</script>
+
+</body>
+</html>

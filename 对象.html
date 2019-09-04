@@ -1,0 +1,140 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+kaskd;k;askd; ;aksd;fk askdskakf;askfd;k;akf;k;akd;sk
+
+
+<script type="text/javascript">
+
+let s1={a:1,b:2}
+let s2=Object.prototype.toString.call({},s1)
+console.log(JSON.stringify(s2))
+
+
+let d2={}
+let _v;
+Object.defineProperties(d2,{
+  'aa':{
+     get(){
+		return _v
+	 },
+	 set(v){
+	    console.log(v)
+		_v=v;
+	 }
+  
+  },
+  'bb':{
+	value:'bbbbbbbbbb',
+	enumerable:true
+  },
+  'cc':{
+	value:function(){
+		console.log('ccc')
+	}
+  }
+
+})
+d2.aa='aaaaaaaaaa'
+console.log(d2)
+
+let keys=Object.keys(d2)
+console.log(keys)
+for(k in d2){
+ console.log(d2[k])
+}
+
+
+
+let d1={}
+let val;
+Object.defineProperty(d1,'a',{
+	get(){
+	console.log('get---')
+	return val
+	
+	},
+	set(_val){
+	console.log('set---'+_val)
+	val=_val
+	
+	},
+	enumerable:true,
+	configurable:false
+
+})
+d1.a='aaaaaaa'
+console.log(d1.a)
+
+
+
+
+let b1="adfadfasd"
+let b2=[...b1]
+let b3={...b1}
+console.log(b3)
+
+let  a1="abc"
+let a2=10
+let a3=Object.assign({},a2)
+console.log(a3)
+
+let as1={a:1}
+let as2={[Symbol('foo')]:2}
+let as3=Object.assign({},as1,as2)
+console.log(as3)
+
+
+let obj11={a:1,b:2,c:{a:3},f:4}
+let obj12={a:11,b:22,c:{a:33},d:44}
+let obj13=Object.assign(obj11,obj12)
+let obj14=Object.assign({},obj12)
+obj14.a=999
+obj14.c.a=8888
+console.log(obj14)
+console.log(obj12)
+
+obj13.a=555
+console.log(obj11===obj13)
+console.log(obj11)
+
+console.log(obj13)
+
+
+console.log('============================');
+let json1={"a":1,"b":2,"b":3,"c":function(){}}
+console.log(json1)
+console.log(typeof json1)
+//console.log(json1 instanceof Object)
+
+
+let a='111',b='222'
+let o1=[a,b]
+console.log(o1 instanceof Object)
+
+console.log(o1);
+let o={
+ [a]:'sss',
+ ['2_'+a]:'vvv',
+ [a.charAt(0)+b.charAt(0)]:'bbb'
+}
+console.log(o);
+
+let o2={...o1,...o}
+console.log(o2)
+let json={a:1,b:2}
+let j2=new Object(json)
+let j3={...json}
+
+j2.a=111
+console.log(j3)
+console.log(j2===json)
+console.log(j3===json)
+
+</script>
+
+</body>
+</html>
